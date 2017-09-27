@@ -2,18 +2,20 @@ square = []
 
 def pravacY(x1, x2, y1, y2, x):
     print(x1, x2, y1, y2, x)
-    y = (float(y2)-float(y1))*(float(x)-float(x1))/(float(x2)-float(x1)) + float(y1)
+    y = (y2-y1)*(x-x1)/(x2-x1) + y1
+    print(y)
     return y
 
 def pravacX(x1, x2, y1, y2, y):
-    x = (float(x2)-float(x1))*(float(y)-float(y1))/(float(y2)-float(y1)) + float(x1)
+    x = (x2-x1)*(y-y1)/(y2-y1) + x1
+    print(x)
     return x
 
 def is_inside(x, y):
-    if y >= pravacY(square[0][0], square[1][0], square[0][1], square[1][1], x):
-        if y <= pravacY(square[2][0], square[3][0], square[2][1], square[3][1], x):
-            if x >= pravacX(square[0][0], square[3][0], square[0][1], square[3][1], y):
-                if x <= pravacX(square[1][0], square[2][0], square[1][1], square[2][1], y):
+    if y >= pravacY(float(square[0][0]), float(square[1][0]), float(square[0][1]), float(square[1][1]), float(x)):
+        if y <= pravacY(float(square[2][0]), float(square[3][0]), float(square[2][1]), float(square[3][1]), float(x)):
+            if x >= pravacX(float(square[0][0]), float(square[3][0]), float(square[0][1]), float(square[3][1]), float(y)):
+                if x <= pravacX(float(square[1][0]), float(square[2][0]), float(square[1][1]), float(square[2][1]), float(y)):
                     return True
     return False
 
