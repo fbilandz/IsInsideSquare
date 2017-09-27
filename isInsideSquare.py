@@ -1,11 +1,12 @@
 square = []
 
 def pravacY(x1, x2, y1, y2, x):
-    y = (y2-y1)*(x-x1)/(x2-x1) + y1
+    print(x1, x2, y1, y2, x)
+    y = (float(y2)-float(y1))*(float(x)-float(x1))/(float(x2)-float(x1)) + float(y1)
     return y
 
 def pravacX(x1, x2, y1, y2, y):
-    x = (x2-x1)*(y-y1)/(y2-y1) + x1
+    x = (float(x2)-float(x1))*(float(y)-float(y1))/(float(y2)-float(y1)) + float(x1)
     return x
 
 def is_inside(x, y):
